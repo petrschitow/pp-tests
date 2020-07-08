@@ -12,4 +12,4 @@ COPY src/test/resources/hello /usr/hello-service
 RUN cd /usr/hello-service
    
 # add command to run service
-ENTRYPOINT ["./hello"]
+CMD ["./hello"]
