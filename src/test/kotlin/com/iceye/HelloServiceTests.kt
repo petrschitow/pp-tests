@@ -1,20 +1,33 @@
 package com.iceye
 
-import org.junit.jupiter.api.Test
+import com.iceye.clients.sendRequestToHelloService
+import com.iceye.utils.getRandom
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.data.forAll
+import io.kotest.data.headers
+import io.kotest.data.row
+import io.kotest.data.table
+import io.kotest.matchers.shouldBe
 
-class HelloServiceTests {
+class HelloServiceTests : FunSpec() {
 
-    @Parameterized.Parameters(name = "Test {index}: update cart with param " +
-            "promoEndTime = {0} " +
-            "returnedPromoTime = {1} " +
-            "promoPrice = {2} " +
-            "returnedPromoPrice = {3}")
-    fun testData(): Collection<Any>{
-
+    init {
+        table(
+                headers("tag"),
+                row("Peter"),
+                row("PETER"),
+                row("peter"),
+                row("peter-${getRandom()}"),
+                row("12334"),
+                row(""),
+                row("l")
+        ).forAll { name ->
+            test("Check hello-service with name $name") {
+                val response = sendRequestToHelloService(name)
+                response shouldBe "Hi there, ${name}!"
+            }
+        }
     }
 
-    @Test
-    fun test(){
 
-    }
 }

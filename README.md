@@ -189,9 +189,32 @@ You can find the address for sending requests to the service `http://127.0.0.1:5
 
 ## Run you tests 
 * Add service address to the Endpoint class
+* Install java and maven on your computer:  
+https://www.oracle.com/java/technologies/javase-downloads.html  
+https://maven.apache.org/install.html  
+
 * Run the command to run tests locally:  
 ```mvn test```
 * Check the output: 
 ```
-
+[INFO] Running com.iceye.HelloServiceTests
+Request URI:	http://127.0.0.1:50285/Peter
+Request URI:	http://127.0.0.1:50285/PETER
+Request URI:	http://127.0.0.1:50285/peter
+Request URI:	http://127.0.0.1:50285/peter-641751
+Request URI:	http://127.0.0.1:50285/12334
+Request URI:	http://127.0.0.1:50285/
+Request URI:	http://127.0.0.1:50285/l
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.348 s - in com.iceye.HelloServiceTests
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.810 s
+[INFO] Finished at: 2020-07-09T02:24:38+03:00
+[INFO] ------------------------------------------------------------------------
 ```
