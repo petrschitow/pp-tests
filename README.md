@@ -112,7 +112,7 @@ See example of this file in this repository too.
 parameter `name: hello-service`  
 and parameter `imagePullPolicy: Never`
 
-### Deploy your service into the claster:
+### Deploy your service into the cluster:
 * Run the command:  
 ```kubectl apply -f hello-deployment.yaml```
 
